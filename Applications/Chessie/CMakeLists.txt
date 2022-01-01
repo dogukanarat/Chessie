@@ -1,17 +1,17 @@
 add_executable(
-    chessie
+    Chessie
 )
 
 target_sources(
-    chessie 
+    Chessie 
         PRIVATE
             Source/App.cpp
             Source/Main.cpp
 )
 
 target_link_libraries(
-    chessie
+    Chessie
         PRIVATE
-            chessiecommon
-    )
+            ChessieCore
+)
     

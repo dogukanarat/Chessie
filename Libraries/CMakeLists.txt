@@ -1,36 +1,36 @@
 ##############################################################################################
 
-add_library(chessiecommon)
+add_library(ChessieCore)
 
-target_sources(chessiecommon PRIVATE ChessieCommon/ChessieContainer.cpp)
+target_sources(ChessieCore PRIVATE ChessieCore/ChessieContainer.cpp)
 
 target_include_directories(
-    chessiecommon 
-    PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/ChessieCommon/Include>
+    ChessieCore 
+    PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/ChessieCore/Include>
            $<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>)
 
 install(
-    TARGETS chessiecommon
-    EXPORT chessielib-config
+    TARGETS ChessieCore
+    EXPORT ChessieLibrary-config
     ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR})
 
-install(DIRECTORY ${CMAKE_CURRENT_LIST_DIR}/ChessieCommon/Include/
-        DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/ChessieCommon)
+install(DIRECTORY ${CMAKE_CURRENT_LIST_DIR}/ChessieCore/Include/
+        DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/ChessieCore)
 
 ##############################################################################################
 
-add_library(chessieethernet)
+add_library(ChessieEthernet)
 
-target_sources(chessieethernet PRIVATE ChessieEthernet/ChessieEthernet.cpp)
+target_sources(ChessieEthernet PRIVATE ChessieEthernet/ChessieEthernet.cpp)
 
 target_include_directories(
-    chessieethernet
+    ChessieEthernet
     PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/ChessieEthernet/Include>
            $<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>)
 
 install(
-    TARGETS chessieethernet
-    EXPORT chessielib-config
+    TARGETS ChessieEthernet
+    EXPORT ChessieLibrary-config
     ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR})
 
 install(DIRECTORY ${CMAKE_CURRENT_LIST_DIR}/ChessieEthernet/Include/
@@ -39,7 +39,7 @@ install(DIRECTORY ${CMAKE_CURRENT_LIST_DIR}/ChessieEthernet/Include/
 ##############################################################################################
 
 install(
-    EXPORT chessielib-config
+    EXPORT ChessieLibrary-config
     NAMESPACE chessielib::
     DESTINATION ${PROJECT_SOURCE_DIR}/cmake)
 
