@@ -10,7 +10,11 @@
             "cacheVariables": {
                 "CMAKE_BUILD_TYPE": "Debug",
                 "CMAKE_TOOLCHAIN_FILE": "",
-                "CMAKE_INSTALL_PREFIX": "${sourceDir}/Out/Install/${presetName}"
+                "CMAKE_INSTALL_PREFIX": "${sourceDir}/Out/Install/${presetName}",
+                "CMAKE_C_COMPILER": "clang",
+                "CMAKE_CXX_COMPILER": "clang++",
+                "CMAKE_PREFIX_PATH": "/Users/dogukanarat/Qt/5.12.12/clang_64/lib/cmake/Qt5",
+                "CMAKE_OSX_ARCHITECTURES": "x86_64"
             }
         },
         {

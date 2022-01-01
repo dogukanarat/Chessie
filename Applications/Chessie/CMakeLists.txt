@@ -1,3 +1,5 @@
+add_subdirectory(Source)
+
 add_executable(
     Chessie
 )
@@ -5,13 +7,15 @@ add_executable(
 target_sources(
     Chessie 
         PRIVATE
-            Source/App.cpp
+            Source/MainWindow.cpp
             Source/Main.cpp
+            Source/MainWindow.ui
 )
 
 target_link_libraries(
     Chessie
         PRIVATE
             ChessieCore
+            Qt5::Widgets
 )
     

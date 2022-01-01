@@ -1,15 +1,12 @@
-#include "Include/App.h"
+#include "MainWindow.h"
+#include <QApplication>
 
-int main()
+int main(int argc, char *argv[])
 {
-    // Create a new instance of the application
-    Chessie::Application* app = new Chessie::Application();
+    QApplication a (argc, argv);
 
-    // Run the application
-    app->Run();
+    Chessie::MainWindow w;
+    w.show();
 
-    // Delete the application
-    delete app;
-
-    return NULL;
+    return a.exec();
 }
