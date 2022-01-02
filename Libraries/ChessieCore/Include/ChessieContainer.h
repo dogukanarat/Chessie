@@ -5,12 +5,11 @@
 
 namespace Chessie
 {
-    class Node
+    class IContainer
     {
-        public:
-        Node() = default;
-
-        Void sampleFunction(Void) noexcept;
+    public:
+        Container() = default;
+        virtual ~Container() = default;
     };
 }
 

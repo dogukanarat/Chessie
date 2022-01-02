@@ -1,14 +1,16 @@
 #ifndef INCLUDED_CHESSIECOMMON_H
 #define INCLUDED_CHESSIECOMMON_H
 
-typedef unsigned char CUINT8;
-typedef unsigned short CUINT16;
-typedef unsigned int CUINT32;
-typedef unsigned long CUINT64;
-typedef signed char CINT8;
-typedef signed short CINT16;
-typedef signed int CINT32;
-typedef signed long CINT64;
+#include <cstdint>
+
+typedef uint8_t CUINT8;
+typedef uint16_t CUINT16;
+typedef uint32_t CUINT32;
+typedef uint64_t CUINT64;
+typedef int8_t CINT8;
+typedef int16_t CINT16;
+typedef int32_t CINT32;
+typedef int64_t CINT64;
 typedef float CREAL32;
 typedef double CREAL64;
 typedef CUINT8 CBOOL;
@@ -18,18 +20,29 @@ typedef CUINT32 CSIZE;
 #define NULL 0
 #endif
 
-#ifndef C_NO_IMPLEMENTATION
-#define C_NO_IMPLEMENTATION 
+#ifndef CHESSIE_ASSERT
+#include <assert.h>
+#define CHESSIE_ASSERT(A) assert(A);
 #endif
 
-#ifndef C_UNUSED_PARAMETER˚
-#define C_UNUSED_PARAMETER(A) (void)(A);
+#ifndef CHESSIE_NO_IMPLEMENTATION
+#define CHESSIE_NO_IMPLEMENTATION 
+#endif
+
+#ifndef CHESSIE_UNUSED_PARAMETER
+#define CHESSIE_UNUSED_PARAMETER(A) (void)(A);
 #endif
 
 namespace Chessie
 {
     typedef void Void;
-    typedef void* VoidPointer;
+    typedef Void* VoidPointer;
+    typedef const Void* ConstVoidPointer;
+    typedef CUINT8 Byte;
+    typedef Byte* BytePointer;
+    typedef CSIZE Size;
+    typedef char Char;
+    typedef Char* CharPointer;
     
 }
 

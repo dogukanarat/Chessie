@@ -1,8 +1,16 @@
 ##############################################################################################
 
-add_library(ChessieCore)
+add_library(
+    ChessieCore
+)
 
-target_sources(ChessieCore PRIVATE ChessieCore/ChessieContainer.cpp)
+target_sources(
+    ChessieCore
+    PRIVATE
+        ChessieCore/ChessieContainer.cpp
+        ChessieCore/ChessieAllocator.cpp
+        ChessieCore/ChessieDefaultAllocator.cpp
+)
 
 target_include_directories(
     ChessieCore 
