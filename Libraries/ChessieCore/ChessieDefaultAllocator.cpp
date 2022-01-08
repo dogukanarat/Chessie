@@ -1,4 +1,5 @@
 #include "ChessieCore/ChessieDefaultAllocator.h"
+#include <cstdlib>
 
 using namespace Chessie;
 
@@ -14,5 +15,5 @@ VoidPointer DefaultAllocator::reallocate(VoidPointer pointer, Size size)
 
 Void DefaultAllocator::free(VoidPointer pointer)
 {
-    free(pointer);
+    std::free(pointer);
 }
