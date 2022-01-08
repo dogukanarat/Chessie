@@ -8,11 +8,11 @@ FetchContent_Declare(
 set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
 set(BUILD_GMOCK OFF CACHE BOOL "" FORCE)
 
+option(INSTALL_GTEST "Enable installation of googletest." OFF)
+
 FetchContent_MakeAvailable(googletest)
 
 include(GoogleTest)
-
-enable_testing()
 
 set(${TEST_NAME} ${PROJECT_NAME}-test)
 
