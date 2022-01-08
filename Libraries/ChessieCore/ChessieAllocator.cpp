@@ -1,4 +1,4 @@
-#include "Include/ChessieAllocator.h"
+#include "ChessieCore/ChessieAllocator.h"
 
 using namespace Chessie;
 

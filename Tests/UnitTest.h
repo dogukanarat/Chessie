@@ -1,5 +1,5 @@
 #include <gtest/gtest.h>
-#include "ChessieCommon.h"
+#include "ChessieCore/ChessieCommon.h"
 
 namespace Test
 {

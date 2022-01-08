@@ -6,16 +6,17 @@ add_executable(
 
 target_sources(
     Chessie 
-        PRIVATE
-            Source/MainWindow.cpp
-            Source/Main.cpp
-            Source/MainWindow.ui
+    PRIVATE
+        Source/MainWindow.cpp
+        Source/Main.cpp
+        Source/MainWindow.ui
 )
 
 target_link_libraries(
     Chessie
-        PRIVATE
-            ChessieCore
-            Qt5::Widgets
+    PRIVATE
+        ChessieCore
+        ChessieSyntaxObject
+        Qt5::Widgets
 )
     

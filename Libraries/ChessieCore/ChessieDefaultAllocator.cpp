@@ -1,22 +1,18 @@
-#include "Include/ChessieDefaultAllocator.h"
+#include "ChessieCore/ChessieDefaultAllocator.h"
 
 using namespace Chessie;
 
-Allocator::Allocator(BytePointer buffer, Size size, Size paddingSize)
-{
-}
-
-VoidPointer Allocator::allocate(Size size)
+VoidPointer DefaultAllocator::allocate(Size size)
 {
     return malloc(size);
 }
 
-VoidPointer Allocator::reallocate(VoidPointer pointer, Size size)
+VoidPointer DefaultAllocator::reallocate(VoidPointer pointer, Size size)
 {
     return realloc(pointer, size);
 }
 
-Void Allocator::free(VoidPointer pointer)
+Void DefaultAllocator::free(VoidPointer pointer)
 {
     free(pointer);
 }

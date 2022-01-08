@@ -1,4 +1,5 @@
 #include <QMainWindow>
+#include "ChessieSyntaxObject/ChessieSyntaxObject.h"
 
 namespace Ui
 {
@@ -15,8 +16,8 @@ namespace Chessie
         explicit MainWindow(QWidget *parent = 0);
         ~MainWindow();
 
-
     private:
         Ui::MainWindow* m_ui;
+        ChessieObjects::SyntaxObject* m_syntaxObject;
     };
 }

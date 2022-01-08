@@ -1,3 +1,3 @@
-#include "Include/ChessieContainer.h"
+#include "ChessieCore/ChessieContainer.h"
 
 using namespace Chessie;

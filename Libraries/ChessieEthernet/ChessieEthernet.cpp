@@ -1,1 +1,1 @@
-#include "Include/ChessieEthernet.h"
+#include "ChessieEthernet/ChessieEthernet.h"

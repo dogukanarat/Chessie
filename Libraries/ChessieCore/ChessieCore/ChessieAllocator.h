@@ -10,9 +10,9 @@ namespace Chessie
     public:
         Allocator(BytePointer buffer, Size size, Size paddingSize = 4);
         virtual ~Allocator() = default;
-        virtual VoidPointer allocate(Size size) override noexcept const;
-        virtual VoidPointer reallocate(VoidPointer pointer, Size size) override noexcept const;
-        virtual Void free(VoidPointer pointer) override noexcept const;
+        virtual VoidPointer allocate(Size size) override;
+        virtual VoidPointer reallocate(VoidPointer pointer, Size size) override;
+        virtual Void free(VoidPointer pointer) override;
     private:
         Void initialize();
     private:

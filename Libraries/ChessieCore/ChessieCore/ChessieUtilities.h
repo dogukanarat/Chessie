@@ -10,7 +10,7 @@ namespace Chessie
     public:
         static VoidPointer memSet(VoidPointer destination, CINT32 value, Size length);
         static VoidPointer memCopy(VoidPointer destination, ConstVoidPointer source, Size length);
-    }
+    };
 }
 
 #endif // INCLUDED_CHESSIEUTILITIES_H 
