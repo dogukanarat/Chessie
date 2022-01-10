@@ -20,7 +20,7 @@ namespace Chessie
     private:
         Ui::MainWindow* m_ui;
         ChessieObjects::Syntax* m_syntax;
-        // Chessie::DefaultAllocator* m_allocator;
+        Chessie::DefaultAllocator* m_allocator;
 
     };
 }

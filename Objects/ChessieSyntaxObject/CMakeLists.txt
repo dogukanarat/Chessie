@@ -1,3 +1,5 @@
+set(CMAKE_INCLUDE_CURRENT_DIR ON)
+
 add_library(
     ChessieSyntaxObject
 )
@@ -14,9 +16,8 @@ target_sources(
     ChessieSyntaxObject
     PRIVATE
         ChessieSyntaxObject.cpp
+        ChessieSyntaxObject/ChessieSyntaxObject.h
 )
-
-
 
 target_include_directories(
     ChessieSyntaxObject 
