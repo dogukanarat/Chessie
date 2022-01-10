@@ -1,10 +1,10 @@
-add_subdirectory(Source)
+set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
 add_executable(
     Chessie
 )
 
-set(CUSTOM_HEADER "${CMAKE_CURRENT_SOURCE_DIR}/Source/GeneratedHeader.h")
+set(CUSTOM_HEADER "${CMAKE_CURRENT_SOURCE_DIR}/GeneratedHeader.h")
 
 execute_process(
     COMMAND python ${CRESSIE_SCRIPT_DIR}/HelloWorld.py ${CUSTOM_HEADER}
@@ -13,9 +13,9 @@ execute_process(
 target_sources(
     Chessie 
     PRIVATE
-        Source/MainWindow.cpp
-        Source/Main.cpp
-        Source/MainWindow.ui
+        MainWindow.cpp
+        Main.cpp
+        MainWindow.ui
         ${CUSTOM_HEADER}
 )
 
