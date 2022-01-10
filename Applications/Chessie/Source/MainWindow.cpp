@@ -6,6 +6,8 @@ Chessie::MainWindow::MainWindow(QWidget *parent)
 {
     m_ui = new Ui::MainWindow();
     m_ui->setupUi(this);
+    // m_syntax = new ChessieObjects::Syntax(parent);
+    // m_allocator = new Chessie::DefaultAllocator();
 }
 
 Chessie::MainWindow::~MainWindow()

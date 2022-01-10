@@ -1,16 +1,25 @@
-#include "ChessieCore/ChessieDefaultAllocator.h"
 #include <cstdlib>
+#include <QDebug>
+#include "ChessieCore/ChessieDefaultAllocator.h"
 
 using namespace Chessie;
 
+DefaultAllocator::DefaultAllocator() : IAllocator()
+{
+}
+
+DefaultAllocator::~DefaultAllocator()
+{
+}
+
 VoidPointer DefaultAllocator::allocate(Size size)
 {
-    return malloc(size);
+    return std::malloc(size);
 }
 
 VoidPointer DefaultAllocator::reallocate(VoidPointer pointer, Size size)
 {
-    return realloc(pointer, size);
+    return std::realloc(pointer, size);
 }
 
 Void DefaultAllocator::free(VoidPointer pointer)

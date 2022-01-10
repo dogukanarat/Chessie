@@ -4,15 +4,18 @@ add_library(
 
 target_link_libraries(
     ChessieSyntaxObject
-    PRIVATE
-        ChessieCore
+    PUBLIC
+        Qt5::Core
         Qt5::Widgets
+        ChessieCore
 )
+
 target_sources(
     ChessieSyntaxObject
     PRIVATE
         ChessieSyntaxObject.cpp
 )
+
 
 
 target_include_directories(
@@ -23,7 +26,7 @@ target_include_directories(
 
 install(
     TARGETS ChessieSyntaxObject
-    EXPORT ChessieObject-config
+    EXPORT ChessieObjects-config
     ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
 )
 

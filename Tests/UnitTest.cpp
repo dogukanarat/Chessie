@@ -1,4 +1,5 @@
 #include "UnitTest.h"
+#include <iostream>
 
 using namespace Test;
 
@@ -12,6 +13,12 @@ TEST_F(FooTest, MethodBarDoesAbc)
 TEST_F(FooTest, DoesXyz)
 {
    // Exercises the Xyz feature of Foo.
+}
+
+TEST_F(FooTest, InterfaceTest)
+{
+   Chessie::IAllocator* allocator = new Chessie::DefaultAllocator();
+   delete allocator;
 }
 
 /**

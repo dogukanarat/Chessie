@@ -1,5 +1,6 @@
 #include <gtest/gtest.h>
 #include "ChessieCore/ChessieCommon.h"
+#include "ChessieCore/ChessieDefaultAllocator.h"
 
 namespace Test
 {

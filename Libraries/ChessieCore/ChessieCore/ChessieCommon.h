@@ -20,9 +20,17 @@ typedef CUINT32 CSIZE;
 #define NULL 0
 #endif
 
-#ifndef CHESSIE_ASSERT
+#ifndef TRUE
+#define TRUE 1
+#endif
+
+#ifndef FALSE
+#define FALSE 0
+#endif
+
+#ifndef CHESSIE_EXPECT
 #include <assert.h>
-#define CHESSIE_ASSERT(A) assert(A);
+#define CHESSIE_EXPECT(A) assert(A);
 #endif
 
 #ifndef CHESSIE_NO_IMPLEMENTATION

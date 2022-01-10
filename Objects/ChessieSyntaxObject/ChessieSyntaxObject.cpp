@@ -1,15 +1,16 @@
 #include "ChessieSyntaxObject/ChessieSyntaxObject.h"
 #include "ChessieCore/ChessieCommon.h"
+#include "ChessieCore/ChessieDefaultAllocator.h"
 
-using namespace Chessie;
 using namespace ChessieObjects;
 
-SyntaxObject::SyntaxObject()
+Syntax::Syntax(QObject* parent)
+    : QObject(parent)
 {
-
+    CHESSIE_EXPECT(TRUE);
 }
 
-SyntaxObject::~SyntaxObject()
+Syntax::~Syntax()
 {
-
+    CHESSIE_EXPECT(TRUE);
 }

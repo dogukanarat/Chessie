@@ -14,18 +14,18 @@ FetchContent_MakeAvailable(googletest)
 
 include(GoogleTest)
 
-set(${TEST_NAME} ${PROJECT_NAME}-test)
-
 add_executable(
     unittest
     UnitTest.cpp
-    )
+)
+
+target_compile_definitions(unittest PUBLIC CTEST)
 
 target_link_libraries(
     unittest
     gtest_main
     ChessieCore
-    )
+)
 
 gtest_discover_tests(unittest
     PROPERTIES

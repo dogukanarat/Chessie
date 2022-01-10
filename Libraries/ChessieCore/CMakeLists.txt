@@ -2,20 +2,27 @@ add_library(
     ChessieCore
 )
 
+target_link_libraries(
+    ChessieCore
+    PRIVATE
+        Qt5::Core   
+)
+
 target_sources(
     ChessieCore
     PRIVATE
-        ChessieContainer.cpp
         ChessieAllocator.cpp
-        ChessieDefaultAllocator.cpp
         ChessieByteArray.cpp
+        ChessieContainer.cpp
+        ChessieDefaultAllocator.cpp
         ChessieUtilities.cpp
 )
 
 target_include_directories(
     ChessieCore 
     PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/>
-           $<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>)
+           $<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>
+)
 
 install(
     TARGETS ChessieCore

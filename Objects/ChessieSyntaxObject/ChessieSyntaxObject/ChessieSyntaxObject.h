@@ -5,13 +5,13 @@
 
 namespace ChessieObjects
 {
-    class SyntaxObject : public QObject
+    class Syntax : public QObject
     {
         Q_OBJECT
         
     public:
-        SyntaxObject();
-        virtual ~SyntaxObject();
+        Syntax(QObject* parent = NULL);
+        virtual ~Syntax();
 
     };
     

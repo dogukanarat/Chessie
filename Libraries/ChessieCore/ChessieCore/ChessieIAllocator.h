@@ -11,7 +11,7 @@ namespace Chessie
         IAllocator() = default;
         virtual ~IAllocator() = default;
         virtual VoidPointer allocate(Size size) = 0;
-        virtual VoidPointer reallocate(VoidPointer pointer, Size size);
+        virtual VoidPointer reallocate(VoidPointer pointer, Size size) = 0;
         virtual Void free(VoidPointer pointer) = 0;
     };
 }

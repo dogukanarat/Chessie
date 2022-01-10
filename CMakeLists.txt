@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.15)
+cmake_minimum_required(VERSION 3.6)
 
 project(
     Chessie
@@ -21,7 +21,10 @@ if(CMAKE_VERSION VERSION_LESS "3.7.0")
     set(CMAKE_INCLUDE_CURRENT_DIR ON)
 endif()
 
-find_package(Qt5 REQUIRED COMPONENTS Widgets )
+find_package(Qt5 COMPONENTS Widgets Core Test REQUIRED)
+
+set(CRESSIE_SCRIPT_DIR "${CMAKE_CURRENT_SOURCE_DIR}/Scripts")
+add_definitions( ${QT_DEFINITIONS} )
 
 include(GNUInstallDirs)
 

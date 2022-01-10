@@ -16,9 +16,9 @@ Allocator::Allocator(BytePointer buffer, Size size, Size paddingSize)
     , m_size(size)
     , m_paddingSize(paddingSize)
 {
-    CHESSIE_ASSERT(buffer != NULL);
-    CHESSIE_ASSERT(size > 0);
-    CHESSIE_ASSERT(paddingSize > 2); // Min header size
+    CHESSIE_EXPECT(buffer != NULL);
+    CHESSIE_EXPECT(size > 0);
+    CHESSIE_EXPECT(paddingSize > 2); // Min header size
 }
 
 /**
