@@ -12,7 +12,6 @@ target_sources(
     ChessieCore
     PRIVATE
         ChessieAllocator.cpp
-        ChessieByteArray.cpp
         ChessieContainer.cpp
         ChessieDefaultAllocator.cpp
         ChessieUtilities.cpp
