@@ -8,7 +8,7 @@ namespace Chessie
     class Utilities
     {
     public:
-        static VoidPointer memSet(VoidPointer destination, CINT32 value, Size length);
+        static VoidPointer memSet(VoidPointer destination, Int32 value, Size length);
         static VoidPointer memCopy(VoidPointer destination, ConstVoidPointer source, Size length);
     };
 }

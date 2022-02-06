@@ -3,7 +3,7 @@
 
 using namespace Chessie;
 
-VoidPointer Utilities::memSet(VoidPointer destination, CINT32 value, Size length)
+VoidPointer Utilities::memSet(VoidPointer destination, Int32 value, Size length)
 {
     return memset(destination, value, length);
 }

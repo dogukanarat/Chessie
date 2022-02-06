@@ -3,18 +3,18 @@
 
 #include <cstdint>
 
-typedef uint8_t CUINT8;
-typedef uint16_t CUINT16;
-typedef uint32_t CUINT32;
-typedef uint64_t CUINT64;
-typedef int8_t CINT8;
-typedef int16_t CINT16;
-typedef int32_t CINT32;
-typedef int64_t CINT64;
-typedef float CREAL32;
-typedef double CREAL64;
-typedef CUINT8 CBOOL;
-typedef CUINT32 CSIZE;
+typedef uint8_t UInt8;
+typedef uint16_t UInt16;
+typedef uint32_t UInt32;
+typedef uint64_t UInt64;
+typedef int8_t Int8;
+typedef int16_t CInt16;
+typedef int32_t Int32;
+typedef int64_t Int64;
+typedef float Real32;
+typedef double Real64;
+typedef UInt8 Bool;
+typedef UInt32 Size;
 
 #ifndef NULL
 #define NULL 0
@@ -46,12 +46,10 @@ namespace Chessie
     typedef void Void;
     typedef Void* VoidPointer;
     typedef const Void* ConstVoidPointer;
-    typedef CUINT8 Byte;
+    typedef UInt8 Byte;
     typedef Byte* BytePointer;
-    typedef CSIZE Size;
     typedef char Char;
     typedef Char* CharPointer;
-    
 }
 
 #endif // INCLUDED_CHESSIECOMMON_H
