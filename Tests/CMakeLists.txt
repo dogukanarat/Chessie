@@ -16,7 +16,8 @@ include(GoogleTest)
 
 add_executable(
     unittest
-    UnitTest.cpp
+    Main.cpp
+    TestAllocator.cpp
 )
 
 target_compile_definitions(unittest PUBLIC CTEST)
