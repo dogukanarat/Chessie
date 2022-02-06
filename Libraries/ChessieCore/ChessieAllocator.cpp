@@ -47,5 +47,61 @@ VoidPointer Allocator::reallocate(VoidPointer pointer, Size size)
  */
 Void Allocator::free(VoidPointer pointer)
 {
-    
+    CHESSIE_EXPECT( NULL != pointer);
+
+    setBlockStatus(pointer, Available);
+}
+
+Size Allocator::getBlockStatus(VoidPointer pointer)
+{
+    CHESSIE_EXPECT( NULL != pointer);
+
+    return (Size)(((UInt32)(*(UInt32*)pointer) & BlockStatusMask) >> 0);
+}
+
+Size Allocator::setBlockStatus(VoidPointer pointer, Bool isAvailable)
+{
+    CHESSIE_EXPECT( NULL != pointer);
+
+    UInt32 HeaderSize = (getBlockSize(pointer) << 1) & BlockSizeMask;
+    UInt32 HeaderStatus = (~isAvailable << 0) & BlockStatusMask;
+    *(UInt32*)(pointer) = HeaderStatus | HeaderSize;
+    return *(Size*)pointer;
+}
+
+Size Allocator::getBlockSize(VoidPointer pointer)
+{
+    CHESSIE_EXPECT( NULL != pointer);
+
+    return (((*(UInt32*)pointer) & BlockSizeMask) >> 1);
+}
+
+Size Allocator::setBlockSize(VoidPointer pointer, Size size)
+{
+    CHESSIE_EXPECT( NULL != pointer);
+
+    UInt32 HeaderSize = (size << 1) & BlockSizeMask;
+    UInt32 HeaderStatus = (getBlockStatus(pointer) << 0) & BlockStatusMask;
+    *(UInt32*)(pointer) = HeaderStatus | HeaderSize;
+    return *(Size*)pointer;
+}
+
+VoidPointer Allocator::getNextAvailableBlock(VoidPointer pointer)
+{
+    CHESSIE_EXPECT( NULL != pointer);
+
+    UInt32* tempPointer = (UInt32*)pointer;
+    VoidPointer resultPointer = NULL;
+
+    if(Available == getBlockStatus(tempPointer))
+    {
+        resultPointer = tempPointer;
+    }
+    else
+    {
+        // @note infinite recursion guard might be implemented
+        resultPointer = getNextAvailableBlock(tempPointer);
+    }
+
+    return resultPointer;
 }
