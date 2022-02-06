@@ -29,12 +29,13 @@ namespace Chessie
         Size getBlockSize(VoidPointer pointer);
         Size setBlockSize(VoidPointer pointer, Size size);
 
-        Void initialize();
+        Size initialise(VoidPointer pointer, Size size);
         VoidPointer getNextAvailableBlock(VoidPointer pointer);
 
         BytePointer m_buffer;
         Size m_size;
         Size m_paddingSize;
+        VoidPointer m_endOfMemory;
     };
 }
 #endif // INCLUDED_CHESSIEALLOCATOR_H
