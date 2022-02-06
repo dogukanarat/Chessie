@@ -9,8 +9,8 @@ namespace Chessie
     class DefaultAllocator : public IAllocator
     {
     public:
-        DefaultAllocator();
-        virtual ~DefaultAllocator();
+        DefaultAllocator() = default;
+        virtual ~DefaultAllocator() = default;
         virtual VoidPointer allocate(Size size);
         virtual VoidPointer reallocate(VoidPointer pointer, Size size);
         virtual Void free(VoidPointer pointer);

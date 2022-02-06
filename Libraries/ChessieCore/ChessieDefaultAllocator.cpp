@@ -4,14 +4,6 @@
 
 using namespace Chessie;
 
-DefaultAllocator::DefaultAllocator() : IAllocator()
-{
-}
-
-DefaultAllocator::~DefaultAllocator()
-{
-}
-
 VoidPointer DefaultAllocator::allocate(Size size)
 {
     return std::malloc(size);
