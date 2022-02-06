@@ -15,20 +15,20 @@ FetchContent_MakeAvailable(googletest)
 include(GoogleTest)
 
 add_executable(
-    unittest
+    UnitTest
     Main.cpp
     TestAllocator.cpp
 )
 
-target_compile_definitions(unittest PUBLIC CTEST)
+target_compile_definitions(UnitTest PUBLIC CTEST)
 
 target_link_libraries(
-    unittest
+    UnitTest
     gtest_main
     ChessieCore
 )
 
-gtest_discover_tests(unittest
+gtest_discover_tests(UnitTest
     PROPERTIES
       LABELS "unit"
     DISCOVERY_TIMEOUT  # how long to wait (in seconds) before crashing
