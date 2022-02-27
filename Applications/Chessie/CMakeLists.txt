@@ -29,5 +29,7 @@ target_link_libraries(
         Qt5::Gui
         ChessieCore
         ChessieSyntaxObject
+        ChessieBaseWidget
+        ChessieGraphicWidget
 )
     

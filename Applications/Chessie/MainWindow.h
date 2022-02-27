@@ -1,6 +1,4 @@
 #include <QMainWindow>
-#include "ChessieSyntaxObject/ChessieSyntaxObject.h"
-#include "ChessieCore/ChessieDefaultAllocator.h"
 
 namespace Ui
 {
@@ -19,8 +17,6 @@ namespace Chessie
 
     private:
         Ui::MainWindow* m_ui;
-        ChessieObjects::Syntax* m_syntax;
-        Chessie::DefaultAllocator* m_allocator;
 
     };
 }

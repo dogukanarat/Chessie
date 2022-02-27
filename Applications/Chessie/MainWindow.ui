@@ -22,11 +22,22 @@
       </property>
      </widget>
     </item>
+    <item>
+     <widget class="ChessieGraphicWidget" name="graphicWidget" native="true"/>
+    </item>
    </layout>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>ChessieGraphicWidget</class>
+   <extends>QWidget</extends>
+   <header>ChessieGraphicWidget/ChessieGraphicWidget.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>
