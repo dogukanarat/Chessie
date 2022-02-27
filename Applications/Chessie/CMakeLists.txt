@@ -32,4 +32,13 @@ target_link_libraries(
         ChessieBaseWidget
         ChessieGraphicWidget
 )
-    
+
+install(
+    TARGETS Chessie
+    EXPORT Chessie-config
+    ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR})
+
+install(
+    DIRECTORY ${CMAKE_CURRENT_LIST_DIR}/
+    DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/Chessie
+)

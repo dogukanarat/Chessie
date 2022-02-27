@@ -6,24 +6,17 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>600</height>
+    <width>500</width>
+    <height>400</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Hello, World!</string>
+   <string>Chessie Pendulum Simulation</string>
   </property>
   <widget class="QWidget" name="centralWidget">
    <layout class="QVBoxLayout" name="verticalLayout">
     <item>
      <widget class="ChessieGraphicWidget" name="graphicWidget" native="true"/>
-    </item>
-    <item>
-     <widget class="QPushButton" name="pushButton">
-      <property name="text">
-       <string>TestButton</string>
-      </property>
-     </widget>
     </item>
    </layout>
   </widget>

@@ -1,9 +1,7 @@
 #include <QWidget>
-#include <QGraphicsScene>
-#include <QGraphicsLineItem>
 #include <QTimer>
-#include <QtMath>
 #include "ChessieBaseWidget/ChessieBaseWidget.h"
+#include "ChessiePendulum/ChessiePendulum.h"
 
 namespace Ui
 {
@@ -26,14 +24,8 @@ private:
     Ui::ChessieGraphicWidget* m_ui;
     QGraphicsScene m_scene;
     QTimer m_timer;
-    QGraphicsLineItem* m_line;
-    QGraphicsEllipseItem* m_ellipse;
+    ChessiePendulum m_pendulum;
 
-    UInt32 fps;
-    Real32 dps;
-    UInt32 t;
-    Real32 phi;
-    Real32 length;
-    Real32 x;
-    Real32 y;
+    UInt32 m_fps;
+
 };

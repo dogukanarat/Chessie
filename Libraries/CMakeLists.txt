@@ -3,6 +3,6 @@ add_subdirectory(ChessieEthernet)
 
 install(
     EXPORT ChessieLibrary-config
-    NAMESPACE chessielib::
+    NAMESPACE ChessieLibrary::
     DESTINATION ${CMAKE_INSTALL_PREFIX}/cmake
 )
