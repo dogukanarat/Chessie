@@ -15,11 +15,7 @@
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
-    <widget class="QPushButton" name="pushButton">
-     <property name="text">
-      <string>HereIsWidget</string>
-     </property>
-    </widget>
+    <widget class="QGraphicsView" name="graphicsView"/>
    </item>
   </layout>
  </widget>

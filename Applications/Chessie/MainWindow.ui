@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>377</width>
-    <height>193</height>
+    <width>800</width>
+    <height>600</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,14 +16,14 @@
   <widget class="QWidget" name="centralWidget">
    <layout class="QVBoxLayout" name="verticalLayout">
     <item>
+     <widget class="ChessieGraphicWidget" name="graphicWidget" native="true"/>
+    </item>
+    <item>
      <widget class="QPushButton" name="pushButton">
       <property name="text">
        <string>TestButton</string>
       </property>
      </widget>
-    </item>
-    <item>
-     <widget class="ChessieGraphicWidget" name="graphicWidget" native="true"/>
     </item>
    </layout>
   </widget>
