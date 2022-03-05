@@ -14,7 +14,6 @@
                 "CMAKE_ARCHIVE_OUTPUT_DIRECTORY_DEBUG": "${sourceDir}/Binaries/${presetName}/Intermediate",
                 "CMAKE_C_COMPILER": "clang",
                 "CMAKE_CXX_COMPILER": "clang++",
-                "CMAKE_PREFIX_PATH": "/Users/dogukanarat/Qt/5.12.12/clang_64/lib/cmake/Qt5",
                 "CMAKE_OSX_ARCHITECTURES": "x86_64"
             }
         },
