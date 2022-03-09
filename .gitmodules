@@ -1,0 +1,3 @@
+[submodule "Externals/DubinsCurves"]
+	path = Externals/DubinsCurves
+	url = https://github.com/dogukanarat/DubinsCurves
