@@ -2,17 +2,11 @@
 #include "ui_ChessieGraphicWidget.h"
 
 ChessieGraphicWidget::ChessieGraphicWidget(QWidget *parent)
-    : ChessieBaseWidget(parent)
-    , m_ui(new Ui::ChessieGraphicWidget)
-    , m_scene{}
-    , m_timer{}
+    : ChessieBaseWidget(parent), m_ui(new Ui::ChessieGraphicWidget), m_timer{}, m_scenes{}, m_fps{60}
 {
     m_ui->setupUi(this);
 
-    m_fps = 60;
-
-    m_pendulum.setScene(&m_scene);
-    m_pendulum.setFrameRate(m_fps);
+    m_scenes.insert("pathPlanner", new ChessiePathPlanner{this});
 
     initialise();
 
@@ -25,17 +19,27 @@ ChessieGraphicWidget::ChessieGraphicWidget(QWidget *parent)
 
 ChessieGraphicWidget::~ChessieGraphicWidget()
 {
+    delete m_ui;
 }
 
 void ChessieGraphicWidget::initialise()
 {
-    m_pendulum.initialise();
+    for (auto it = m_scenes.begin(); it != m_scenes.end(); ++it)
+    {
+        it.value()->initialise();
+        it.value()->setSceneRect(0,0, m_ui->graphicsView->width() - 20, m_ui->graphicsView->height() - 20);
+    }
 
-    m_ui->graphicsView->setScene(&m_scene);
+    m_ui->graphicsView->setScene(m_scenes.value("pathPlanner"));
+    m_ui->graphicsView->fitInView(m_scenes.value("pathPlanner")->sceneRect(), Qt::KeepAspectRatio);
+    m_ui->graphicsView->setRenderHint(QPainter::Antialiasing);
     m_ui->graphicsView->show();
 }
 
 void ChessieGraphicWidget::update()
 {
-    m_pendulum.update();
+    for (auto it = m_scenes.begin(); it != m_scenes.end(); ++it)
+    {
+        it.value()->update();
+    }
 }

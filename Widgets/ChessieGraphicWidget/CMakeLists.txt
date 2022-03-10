@@ -8,7 +8,9 @@ target_link_libraries(
         Qt5::Core
         Qt5::Widgets
         ChessieBaseWidget
+        ChessieBaseScene
         ChessiePendulum
+        ChessiePathPlanner
 )
 
 target_sources(

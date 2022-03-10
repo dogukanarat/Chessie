@@ -31,7 +31,6 @@ target_link_libraries(
         ChessieSyntaxObject
         ChessieBaseWidget
         ChessieGraphicWidget
-        DubinsCurve
 )
 
 install(

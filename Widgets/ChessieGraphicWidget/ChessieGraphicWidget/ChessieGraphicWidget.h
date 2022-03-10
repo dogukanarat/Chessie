@@ -1,7 +1,10 @@
 #include <QWidget>
 #include <QTimer>
+#include <QMap>
+#include <QString>
 #include "ChessieBaseWidget/ChessieBaseWidget.h"
-#include "ChessiePendulum/ChessiePendulum.h"
+#include "ChessieBaseScene/ChessieBaseScene.h"
+#include "ChessiePathPlanner/ChessiePathPlanner.h"
 
 namespace Ui
 {
@@ -22,9 +25,12 @@ public slots:
 
 private:
     Ui::ChessieGraphicWidget* m_ui;
-    QGraphicsScene m_scene;
+
     QTimer m_timer;
-    ChessiePendulum m_pendulum;
+
+    QMap<QString, ChessieBaseScene*> m_scenes;
+
+    ChessiePathPlanner m_pathPlanner;
 
     UInt32 m_fps;
 

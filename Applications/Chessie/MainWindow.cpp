@@ -7,6 +7,7 @@ Chessie::MainWindow::MainWindow(QWidget *parent)
 {
     m_ui->setupUi(this);
 
+    setWindowTitle("Chessie");
 }
 
 Chessie::MainWindow::~MainWindow()
