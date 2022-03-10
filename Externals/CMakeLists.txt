@@ -1,1 +1,1 @@
-add_subdirectory(DubinsCurves)
+add_subdirectory(DubinsPath)
