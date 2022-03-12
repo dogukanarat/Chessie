@@ -32,13 +32,21 @@ public:
     virtual void initialise();
     virtual void update();
 
-private slots:
     void mousePressEvent(QGraphicsSceneMouseEvent *event);
+    void mouseMoveEvent(QGraphicsSceneMouseEvent *event);
+    void mouseReleaseEvent(QGraphicsSceneMouseEvent *event);
 
 protected:
     QVector<QPointF> m_points;
+    QVector<double> m_angles;
     DubinsPath m_dubinsPath;
     DrawState m_drawState;
+
+    QGraphicsLineItem* m_activeLine;
+    QPointF m_activePoint;
+    double m_lastAngle;
+    double m_lastLength;
+    bool m_isLengthSet;
 
     void algorithmRun();
     void algorithmDisplay();

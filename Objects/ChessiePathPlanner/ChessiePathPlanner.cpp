@@ -2,29 +2,71 @@
 
 ChessiePathPlanner::ChessiePathPlanner(QObject *parent)
     : ChessieBaseScene(parent)
+    , m_isLengthSet{FALSE}
 {
-    connect(this, &ChessiePathPlanner::mousePressEvent, this, &ChessiePathPlanner::mousePressEvent);
 }
 
 void ChessiePathPlanner::mousePressEvent(QGraphicsSceneMouseEvent *event)
 {
-    double pointX = event->scenePos().x();
-    double pointY = event->scenePos().y();
+    QPointF currentPoint = event->scenePos();
+    double pointX = currentPoint.x();
+    double pointY = currentPoint.y();
 
     if (m_points.size() < 2)
     {
         QLineF newLine{};
         newLine.setP1(QPointF{pointX, pointY});
         newLine.setAngle(-90);
-        newLine.setLength(50);
+        newLine.setLength(1);
 
-        addLine(newLine, QPen(Qt::green, 1, Qt::DashLine, Qt::RoundCap));
+        m_activeLine = addLine(newLine, QPen(Qt::green, 1, Qt::DashLine, Qt::RoundCap));
+        m_activePoint = currentPoint;
 
-        m_points.push_back(event->scenePos());
+        m_points.push_back(currentPoint);
     }
     else
     {
     }
+}
+
+void ChessiePathPlanner::mouseMoveEvent(QGraphicsSceneMouseEvent *event)
+{
+    QPointF currentPoint = event->scenePos();
+    double pointX = currentPoint.x();
+    double pointY = currentPoint.y();
+
+    if(NULL != m_activeLine)
+    {
+        double startX = m_activePoint.x();
+        double startY = m_activePoint.y();
+
+        double length = sqrt(pow(pointX - startX, 2) + pow(pointY - startY, 2));
+
+        if(!m_isLengthSet)
+        {
+            m_lastLength = length;
+        }
+        else
+        {
+            length = m_lastLength;
+        }
+
+        m_lastAngle = radToDeg(-atan2(pointY - startY, pointX - startX));
+
+        QLineF replacedLine{};
+        replacedLine.setP1(m_activePoint);
+        replacedLine.setAngle(m_lastAngle);
+        replacedLine.setLength(length);
+        
+        m_activeLine->setLine(replacedLine);
+    }
+}
+
+void ChessiePathPlanner::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
+{
+    m_activeLine = NULL;
+    m_angles.push_back(m_lastAngle);
+    m_isLengthSet = TRUE;
 
     if (m_points.size() == 2)
     {
@@ -32,16 +74,15 @@ void ChessiePathPlanner::mousePressEvent(QGraphicsSceneMouseEvent *event)
         algorithmDisplay();
     }
     else
-    {
-    }
+    {}
 }
 
 void ChessiePathPlanner::algorithmRun()
 {
-    double initialPose[] = {m_points[0].x(), m_points[0].y(), degToRad(90)};
-    double finalPose[] = {m_points[1].x(), m_points[1].y(), degToRad(90)};
+    double initialPose[] = {m_points[0].x(), m_points[0].y(), degToRad(-m_angles[0])};
+    double finalPose[] = {m_points[1].x(), m_points[1].y(), degToRad(-m_angles[1])};
 
-    dubinsPathShortestPath(&m_dubinsPath, initialPose, finalPose, 40.0);
+    dubinsPathShortestPath(&m_dubinsPath, initialPose, finalPose, m_lastLength);
 }
 
 void ChessiePathPlanner::algorithmDisplay()
