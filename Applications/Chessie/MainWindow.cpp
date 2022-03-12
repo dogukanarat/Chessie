@@ -7,7 +7,8 @@ Chessie::MainWindow::MainWindow(QWidget *parent)
 {
     m_ui->setupUi(this);
 
-    setWindowTitle("Chessie");
+    setWindowTitle("Chessie Application");
+    resize(800, 600);
 }
 
 Chessie::MainWindow::~MainWindow()
